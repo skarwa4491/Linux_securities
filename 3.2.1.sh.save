@@ -1,0 +1,17 @@
+#!/bin/bash
+
+message="$(sysctl net.ipv4.conf.all.send_redirects)"
+echo $message
+config=`echo ${message% = 1}`
+
+
+if [$config -eq 1 ];
+then
+	echo "compliant"
+else
+	echo "non-compliant"
+
+fi
+
+
+

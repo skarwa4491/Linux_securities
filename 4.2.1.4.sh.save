@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+param=`grep ^\$FileCreateMode /etc/rsyslog.conf /etc/rsyslog.d/*.conf | awk 'NR==1 {print $5}`
+echo $param
